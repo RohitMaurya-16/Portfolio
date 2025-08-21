@@ -20,7 +20,7 @@ const Profile = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-accent to-primary blur-2xl opacity-60 animate-pulse z-0" />
           <img
             src="/profile.jpg"
-            alt="Profile picture of Rohit Maurya"
+            alt="Rohit Maurya"
             className="relative rounded-full w-40 h-40 object-cover shadow-neumorph border-4 border-primary z-10"
           />
         </motion.div>
