@@ -25,6 +25,11 @@ const Certifications = () => {
       image: '/ceritificate_iit.png',
       downloadName: 'iit-certificate.png',
     },
+    {
+      title: 'Adobe Certificate',
+      image: '/adobe_cirtificate_page-0001.jpg', // ✅ added Adobe certificate
+      downloadName: 'adobe-certificate.jpg',
+    },
   ];
 
   return (
