@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  --navy-darkest: #020c1b;
+  --navy-dark:    #0a192f;
+  --navy:         #112240;
+  --navy-light:   #233554;
+  --slate:        #8892b0;
+  --slate-light:  #a8b2d8;
+  --slate-lightest:#ccd6f6;
+  --white:        #e6f1ff;
+  --green:        #64ffda;
+  --green-tint:   rgba(100,255,218,0.07);
+  --transition:   all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--navy-dark);
+  color: var(--slate);
+  font-family: 'Inter', 'SF Pro Text', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--slate); }
+
+/* ── Selection ── */
+::selection {
+  background: var(--green-tint);
+  color: var(--green);
+}
+
+/* ── Typography scale ── */
+h1, h2, h3, h4 {
+  color: var(--slate-lightest);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover { color: var(--green); opacity: 0.85; }
+
+/* ── Section number prefix (professional touch) ── */
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--green);
+  font-size: 0.85rem;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* ── Section heading ── */
+.section-heading {
+  color: var(--slate-lightest);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 200px;
+  background: var(--navy-light);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .section-heading::after { width: 80px; }
+}
+
+/* ── Card / panel ── */
+.panel {
+  background: var(--navy);
+  border: 1px solid var(--navy-light);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.panel:hover {
+  border-color: var(--slate);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+}
+
+/* ── Tag pill ── */
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--green);
+  background: var(--green-tint);
+  padding: 3px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ── Green accent button ── */
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-green:hover {
+  background: var(--green-tint);
+  color: var(--green);
+  opacity: 1;
+}
+
+/* ── Numbered list (experience / education) ── */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green) 0%, var(--navy-light) 100%);
+}
+
+/* ── Fade-in animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s cubic-bezier(0.645,0.045,0.355,1) both;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ── Navbar ── */
+/* Hamburger button — flex only when visible (md:hidden handles hiding on desktop) */
+button.md\:hidden {
+  display: flex;
+}
+
+.nav-link-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--slate-lightest);
+  padding: 6px 12px;
+  border-radius: 3px;
+  transition: var(--transition);
+  letter-spacing: 0.05em;
+  position: relative;
+}
+.nav-link-item:hover { color: var(--green); opacity: 1; }
+.nav-link-item.active { color: var(--green); }
+
+/* ── Input fields ── */
+.field {
+  width: 100%;
+  background: var(--navy-darkest);
+  border: 1px solid var(--navy-light);
+  border-radius: 4px;
+  color: var(--slate-lightest);
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+  outline: none;
+}
+.field:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px var(--green-tint);
+}
+.field::placeholder { color: var(--slate); opacity: 0.5; }
+.field.error { border-color: #e06c75; }
+
+/* ── Cert image card ── */
+.cert-img-card {
+  background: var(--navy);
+  border: 1px solid var(--navy-light);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.cert-img-card:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 0 1px var(--green-tint);
+}
+
+/* ── Social sidebar (desktop) ── */
+.social-sidebar {
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.social-sidebar::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 90px;
+  background: var(--slate);
+}
+
+@media (max-width: 1024px) {
+  .social-sidebar { display: none; }
+}
