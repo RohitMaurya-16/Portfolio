@@ -29,111 +29,82 @@
 // export default WorkExperience;
 
 
-import React from 'react';
-import {
-  FaTrophy,
-  FaExternalLinkAlt,
-  FaCode,
-} from 'react-icons/fa';
 
-const Hackathons = () => {
-  const hackathons = [
+
+import React from 'react';
+
+const WorkExperience = () => {
+  const experiences = [
     {
-      name: 'Hack 24',
-      organizer: 'IIIT Delhi',
-      date: 'August 24, 2024',
-      achievement: '6th Rank',
+      company: 'Eduskills',
+      role: 'AI-ML Virtual Intern',
+      duration: 'Jan 2026 – Mar 2026',
+      description:
+        'Built and evaluated Machine Learning models using Scikit-learn, applying data preprocessing and feature engineering. Applied model evaluation and feature selection techniques to improve predictive performance.',
+    },
+    {
+      company: 'IIIT Delhi',
+      role: 'Hack 24 Participant',
+      duration: 'August 24, 2024',
       description:
         'Participated in Hack 24 at IIIT Delhi and secured 6th rank among participating teams.',
     },
-
     {
-      name: 'Drone4S Hackathon',
-      organizer: 'IIT Roorkee',
-      date: 'October 12, 2024',
-      achievement: 'Participant',
-      description:
-        'Participated in the Drone4S Hackathon at IIT Roorkee, focusing on technical problem-solving and innovation.',
-    },
-
-    {
-      name: 'Cybersecurity Hackathon – HACK IITK',
-      organizer: 'IIT Kanpur',
-      date: 'February 15–18, 2025',
-      achievement: 'Cybersecurity Solution Track',
+      company: 'IIT Kanpur',
+      role: 'Cybersecurity Hackathon Participant',
+      duration: 'February 15–18, 2025',
       description:
         'Participated in the Cybersecurity Hackathon at IIT Kanpur in the Cybersecurity Solution Track.',
     },
-
     {
-      name: 'GreenGuard Hackathon',
-      organizer: 'IIT Roorkee',
-      date: '2024',
-      achievement: 'Finalist – Top 5%',
+      company: 'IIT Roorkee',
+      role: 'Drone4S Hackathon Participant',
+      duration: 'October 12, 2024',
       description:
-        'Reached the finalist stage, placing among the top 5% of participants in the GreenGuard Hackathon.',
+        'Participated in the Drone4S Hackathon at IIT Roorkee, focusing on technical problem-solving and innovation.',
     },
-
     {
-      name: 'Adobe India Hackathon 2025',
-      organizer: 'Adobe',
-      date: '2025',
-      achievement: 'Participant – Team Recursion Rebels',
+      company: 'IIT Roorkee',
+      role: 'GreenGuard Hackathon Finalist',
+      duration: '2024',
+      description:
+        'Reached the finalist stage and placed among the top 5% of participants in the GreenGuard Hackathon.',
+    },
+    {
+      company: 'Adobe',
+      role: 'Adobe India Hackathon Participant',
+      duration: '2025',
       description:
         'Participated in the Adobe India Hackathon as a member of Team Recursion Rebels.',
     },
   ];
 
   return (
-    <section id="hackathons" className="animate-fadeIn">
-      <h2 className="text-2xl font-semibold mb-6 border-b-2 border-primary pb-1">
-        Hackathons & Competitions
+    <section id="work-experience" className="animate-fadeIn">
+      <h2 className="text-2xl font-semibold mb-4 border-b-2 border-blue-600 pb-1">
+        Work Experience & Hackathons
       </h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {hackathons.map((hackathon) => (
-          <div
-            key={hackathon.name}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-2xl hover:-translate-y-1 transition duration-300 border border-transparent hover:border-primary/40"
+      <ul className="space-y-4">
+        {experiences.map(({ company, role, duration, description }) => (
+          <li
+            key={`${role}-${company}`}
+            className="bg-gray-100 dark:bg-gray-800 p-4 rounded shadow"
           >
-            {/* Header */}
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <div>
-                <h3 className="font-bold text-xl text-primary">
-                  {hackathon.name}
-                </h3>
+            <h3 className="font-bold text-lg">
+              {role} - {company}
+            </h3>
 
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mt-1">
-                  {hackathon.organizer}
-                </p>
-              </div>
-
-              <FaTrophy className="text-xl text-primary flex-shrink-0" />
-            </div>
-
-            {/* Date */}
-            <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-3">
-              {hackathon.date}
+            <p className="italic text-sm text-gray-600 dark:text-gray-400">
+              {duration}
             </p>
 
-            {/* Achievement */}
-            <div className="flex items-center gap-2 mb-4">
-              <FaCode className="text-primary text-sm" />
-
-              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                {hackathon.achievement}
-              </span>
-            </div>
-
-            {/* Description */}
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-              {hackathon.description}
-            </p>
-          </div>
+            <p>{description}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };
 
-export default Hackathons;
+export default WorkExperience;
