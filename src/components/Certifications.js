@@ -17,6 +17,21 @@ const Certifications = () => {
   issuer: 'Columbia+',
   year: '2025',
   },
+    {
+    title: 'Intro to Deep Learning',
+    issuer: 'Infosys Springboard',
+    year: '2025',
+  },
+  {
+    title: 'Database Design',
+    issuer: 'Infosys Springboard',
+    year: '2024',
+  },
+  {
+    title: 'Programming in C',
+    issuer: 'Infosys Springboard',
+    year: '2024',
+  },
   ];
 
   const certificateImages = [
@@ -40,6 +55,24 @@ const Certifications = () => {
   image: 'https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=s3v59g8u&variant=medium',
   downloadName: 'machine-learning-I-certificate.png',
 },
+    {
+    title: 'Intro to Deep Learning - Infosys Springboard',
+    image: '/Infosys_deep_learning.png',
+    downloadName: 'intro-to-deep-learning.png',
+    pdf: '/Infosys_deep_learning.pdf',
+  },
+  {
+    title: 'Database Design - Infosys Springboard',
+    image: '/Infosys_dbms.png',
+    downloadName: 'database-design.png',
+    pdf: '/Infosys_dbms.pdf',
+  },
+  {
+    title: 'Programming in C - Infosys Springboard',
+    image: '/Infosys_c.png',
+    downloadName: 'programming-in-c.png',
+    pdf: '/Infosys_c.pdf',
+  },
   ];
 
   return (
