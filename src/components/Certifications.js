@@ -58,19 +58,19 @@ const Certifications = () => {
     {
     title: 'Intro to Deep Learning - Infosys Springboard',
     image: '/Infosys_deep_learning_page.jpg',
-    downloadName: 'intro-to-deep-learning.png',
+    downloadName: 'intro-to-deep-learning.jpg',
     pdf: '/Infosys_deep_learning.pdf',
   },
   {
     title: 'Database Design - Infosys Springboard',
     image: '/Infosys_dbms.jpg',
-    downloadName: 'database-design.png',
+    downloadName: 'database-design.jpg',
     pdf: '/Infosys_dbms.pdf',
   },
   {
     title: 'Programming in C - Infosys Springboard',
     image: '/infosys_c.jpg',
-    downloadName: 'programming-in-c.png',
+    downloadName: 'programming-in-c.jpg',
     pdf: '/Infosys_c.pdf',
   },
   ];
