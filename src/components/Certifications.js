@@ -12,6 +12,11 @@ const Certifications = () => {
       issuer: 'IIT Kanpur',
       year: '2024',
     },
+    {
+  title: 'Machine Learning I',
+  issuer: 'Columbia+',
+  year: '2025',
+  },
   ];
 
   const certificateImages = [
@@ -30,6 +35,11 @@ const Certifications = () => {
       image: '/adobe_cirtificate_page-0001.jpg', // ✅ added Adobe certificate
       downloadName: 'adobe-certificate.jpg',
     },
+    {
+  title: 'Machine Learning I - Columbia+',
+  image: 'https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=s3v59g8u&variant=medium',
+  downloadName: 'machine-learning-I-certificate.png',
+},
   ];
 
   return (
