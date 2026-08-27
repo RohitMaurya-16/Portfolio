@@ -15,7 +15,7 @@ A modern, responsive portfolio website built with React.js showcasing my skills,
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [Portfolio Website](https://rohit-portfolio-07.netlify.app/)
+Visit the live portfolio: [Portfolio Website](https://rohit-maurya-portfolio.netlify.app)
 
 ## 🛠️ Tech Stack
 
