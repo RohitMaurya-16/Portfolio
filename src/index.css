@@ -174,9 +174,22 @@ a:hover { color: var(--green); opacity: 0.85; }
 .delay-5 { animation-delay: 0.5s; }
 
 /* ── Navbar ── */
-/* Hamburger button — flex only when visible (md:hidden handles hiding on desktop) */
+/* Hamburger button: only visible on mobile/tablet (< 768px) */
 button.md\:hidden {
-  display: flex;
+  display: none;
+}
+@media (max-width: 767px) {
+  button.md\:hidden {
+    display: flex;
+  }
+  nav.hidden.md\:flex {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  nav.hidden.md\:flex {
+    display: flex !important;
+  }
 }
 
 .nav-link-item {

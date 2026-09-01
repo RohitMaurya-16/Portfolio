@@ -33,7 +33,7 @@ const experiences = [
   {
     org: 'IIT Roorkee – GreenGuard',
     role: 'Hackathon Finalist',
-    duration: '2024',
+    duration: '2025',
     points: [
       'Reached the finalist stage, placing in the top 5% of all participants.',
       'Presented an environment-tech solution for sustainability challenges.',
